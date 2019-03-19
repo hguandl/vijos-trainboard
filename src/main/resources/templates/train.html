@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table align="center">
+    <tr>
+        <th>UID</th>
+        <th>Status</th>
+        <th>Time</th>
+    </tr>
+    <tr th:each="record : ${records}">
+        <td><a th:href="@{'http://adoj.sustc.edu.cn/d/CS208/records?uid_or_name='+${record.getUid()}+'&pid='+${pid}+'&nopretest=on'}" th:text="${record.getUid()}"></a></td>
+        <td th:text="${record.getStatus()}"></td>
+        <td th:text="${record.getTime()}"></td>
+    </tr>
+</table>
+</body>
+</html>
