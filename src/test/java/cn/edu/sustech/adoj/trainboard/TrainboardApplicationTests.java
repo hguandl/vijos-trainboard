@@ -53,12 +53,14 @@ public class TrainboardApplicationTests {
             if (!records.containsKey(uid)) {
                 records.put(uid, new Record(
                         document.getInteger("status"),
-                        document.getDate("judge_at")));
+                        document.getDate("judge_at"),
+                        document.getString("lang")));
             } else {
                 if (document.getInteger("status") < records.get(uid).getStatus()) {
                     records.put(uid, new Record(
                             document.getInteger("status"),
-                            document.getDate("judge_at")));
+                            document.getDate("judge_at"),
+                            document.getString("lang")));
                 }
             }
         }

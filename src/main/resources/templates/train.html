@@ -14,11 +14,14 @@
     <tr>
         <th onclick="sortTable(0)" style="cursor:pointer">UID</th>
         <th onclick="sortTable(1)" style="cursor:pointer">Status</th>
+        <th>Language</th>
         <th>Time</th>
     </tr>
     <tr th:each="record : ${records}">
         <td><a th:href="@{'http://adoj.sustc.edu.cn/d/CS208/records?uid_or_name='+${record.getUid()}+'&pid='+${pid}+'&nopretest=on'}" th:text="${record.getUid()}"></a></td>
-        <td th:text="${record.getStatus()}"></td>
+        <td th:if='${record.getStatus().equals("passed")}' style="color: #25ad40!important" th:text="${record.getStatus()}"></td>
+        <td th:if='${record.getStatus().equals("failed")}' style="color: #fb5555!important" th:text="${record.getStatus()}"> </td>
+        <td th:text="${record.getLang()}"></td>
         <td th:text="${record.getTime()}"></td>
     </tr>
   </tbody>

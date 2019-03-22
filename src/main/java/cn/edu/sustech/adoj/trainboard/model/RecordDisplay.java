@@ -8,11 +8,13 @@ public class RecordDisplay {
     private Integer uid;
     private String status;
     private String time;
+    private String lang;
 
     private RecordDisplay(Integer uid, Record record) {
         this.uid = uid;
         this.status = parseStatus(record.getStatus());
         this.time = record.getJudgeAt().toString();
+        this.lang = record.getLang();
     }
 
     private static String parseStatus(Integer status) {
@@ -40,5 +42,9 @@ public class RecordDisplay {
 
     public Integer getUid() {
         return uid;
+    }
+
+    public String getLang() {
+        return lang;
     }
 }
