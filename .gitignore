@@ -31,3 +31,4 @@ HELP.md
 
 # IntelliJ IDEA
 .idea/*.xml
+/src/main/resources/application.properties

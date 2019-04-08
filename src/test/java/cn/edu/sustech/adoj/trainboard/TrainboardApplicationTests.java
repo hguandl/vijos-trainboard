@@ -1,6 +1,9 @@
 package cn.edu.sustech.adoj.trainboard;
 
+import cn.edu.sustech.adoj.trainboard.config.CallUrls;
 import cn.edu.sustech.adoj.trainboard.model.Record;
+import cn.edu.sustech.adoj.trainboard.model.cas.ServiceResponse;
+import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import com.mongodb.BasicDBObject;
 import com.mongodb.DBCursor;
 import com.mongodb.MongoClient;
@@ -11,11 +14,9 @@ import com.mongodb.client.MongoDatabase;
 import org.bson.Document;
 import org.bson.conversions.Bson;
 import org.bson.types.ObjectId;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.Test;
+import org.junit.*;
 import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
@@ -29,6 +30,7 @@ import java.util.Set;
 public class TrainboardApplicationTests {
     private static MongoDatabase mongoDatabase;
 
+    @Ignore
     @BeforeClass
     public static void connectMongo() {
         try {
@@ -39,6 +41,7 @@ public class TrainboardApplicationTests {
         }
     }
 
+    @Ignore
     @Test
     public void getCollection() {
         BasicDBObject condition = new BasicDBObject();
@@ -73,5 +76,12 @@ public class TrainboardApplicationTests {
                 System.out.println("failed");
             }
         }
+    }
+
+    @Autowired CallUrls callUrls;
+
+    @Test
+    public void testUrls() {
+        assert callUrls.getServiceUrl() != null;
     }
 }

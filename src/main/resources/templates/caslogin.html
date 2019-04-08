@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Trainboard</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+   
+</head>
+<body>
+<table id="table" align="center" class="table table-bordered table-hover" style="width: 702px;">
+  <tbody>
+    <tr><th>ln</th> <td th:text="${user.getLn()}"></td></tr>
+    <tr><th>name</th> <td th:text="${user.getName()}"></td></tr>
+    <tr><th>fn</th> <td th:text="${user.getFn()}"></td></tr>
+    <tr><th>groups</th> <td th:text="${user.getGroups()}"></td></tr>
+    <tr><th>id</th> <td th:text="${user.getId()}"></td></tr>
+    <tr><th>email</th> <td th:text="${user.getEmail()}"></td></tr>
+    <tr><th>depts</th> <td th:text="${user.getDepts()}"></td></tr>
+    <tr><th>sid</th> <td th:text="${user.getSid()}"></td></tr>
+  </tbody>
+</table>
+</body>
+</html>

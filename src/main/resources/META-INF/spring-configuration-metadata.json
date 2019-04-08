@@ -1,0 +1,22 @@
+{
+  "groups": [
+    {
+      "name": "cas.call-urls",
+      "type": "cn.edu.sustech.adoj.trainboard.config.CallUrls"
+    }
+  ],
+  "properties": [
+    {
+      "name": "cas.call-urls.service-url",
+      "type": "java.lang.String"
+    },
+    {
+      "name": "cas.call-urls.login-base-url",
+      "type": "java.lang.String"
+    },
+    {
+      "name": "cas.call-urls.validate-url",
+      "type": "java.lang.String"
+    }
+  ]
+}
